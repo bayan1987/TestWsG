@@ -8,8 +8,6 @@ import com.ats.webservice.data.repoImpl.RepoImpl
 import com.ats.webservice.domain.repo.WsRepo
 import com.google.gson.Gson
 import com.google.gson.GsonBuilder
-import com.grey.sar.data.local.PreferenceHelper
-import com.grey.sar.data.local.PreferencesKeys
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -45,7 +43,7 @@ object NetworkModule {
                 val request = it.request().newBuilder()
                 request.addHeader("Accept-language", "en")
                 request.addHeader("content-type", "application/json")
-                request.addHeader("Authorization", PreferenceHelper().getString(PreferencesKeys.KEY_JWT_TOKEN,"")?:"")
+//                request.addHeader("Authorization", PreferenceHelper().getString(PreferencesKeys.KEY_JWT_TOKEN,"")?:"")
                 it.proceed(request.build())
             }
             .addInterceptor(Interceptor { chain ->

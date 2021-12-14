@@ -60,3 +60,11 @@ dependencies {
 //    debugCompile 'com.readystatesoftware.chuck:library:1.1.0'
 //    releaseCompile 'com.readystatesoftware.chuck:library-no-op:1.1.0'
 }
+allprojects {
+    repositories {
+        maven {
+            url "https://jitpack.io"
+            credentials { username authToken }
+        }
+    }
+}
